@@ -40,6 +40,8 @@ export const By = styled.div`
 `;
 
 export const Author = styled.p`
+  margin: 0 0 0 5px;
+
   color: ${p => p.theme.colors[2]};
 `;
 
