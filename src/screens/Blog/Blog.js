@@ -13,6 +13,7 @@ import { Search } from '../../ui/icons';
 import { newsPics, blogPics } from './assets';
 
 import {
+  Wrapper,
   BlogWrapper,
   BlogHeader,
   BlogContent,
@@ -31,7 +32,7 @@ const Blog = () => {
   const splittedNews = useMemo(() => R.splitEvery(4, news), [news]);
 
   return (
-    <React.Fragment>
+    <Wrapper>
       <BlogWrapper>
         <BlogHeader>Blog</BlogHeader>
         <BlogContent>
@@ -71,7 +72,7 @@ const Blog = () => {
           ))}
         </NewsContent>
       </NewsWrapper>
-    </React.Fragment>
+    </Wrapper>
   );
 };
 

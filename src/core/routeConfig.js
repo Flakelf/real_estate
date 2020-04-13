@@ -11,7 +11,7 @@ const Router = () => (
     <Header />
     <Switch>
       <Route exact path='/blog' component={Blog} />
-      <Route path='*' component={() => <h1>Not found</h1>} />
+      <Route path='*' component={Blog} />
     </Switch>
     <Footer />
   </BrowserRouter>

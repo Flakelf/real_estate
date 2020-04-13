@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const Wrapper = styled.div`
+  margin: 0 0 74px 0;
+`;
+
 export const BlogWrapper = styled.div`
   margin: 80px 0 0 0;
 `;

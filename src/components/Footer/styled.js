@@ -6,7 +6,6 @@ export const Wrapper = styled.div`
   display: flex;
   position: relative;
   align-items: center;
-  margin: 74px 0 0 0;
   height: 117px;
 
   :before {
