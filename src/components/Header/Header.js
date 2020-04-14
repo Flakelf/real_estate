@@ -5,7 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { getName } from '../../modules/auth/selectors';
 
 import { Arrow } from '../../ui/icons';
-import { Button, Container } from '../../ui/components';
+import { Button } from '../../ui/components';
 
 import { Profile } from './components';
 
@@ -28,29 +28,27 @@ const Header = () => {
   );
 
   return (
-    <Container>
-      <Wrapper>
-        <Links>
-          {links.map((link, index) => (
-            <Link
-              key={index}
-              to={link.pathname}
-              activeClassName='selected'
-              isActive={() => currentPath === link.pathname}
-            >
-              {link.title}
-            </Link>
-          ))}
-        </Links>
-        <RightSide>
-          <LanguageSelect>
-            <Language>Eng</Language>
-            <Arrow />
-          </LanguageSelect>
-          {name ? <Profile name={name} /> : <Button>Sign up / Log in</Button>}
-        </RightSide>
-      </Wrapper>
-    </Container>
+    <Wrapper>
+      <Links>
+        {links.map((link, index) => (
+          <Link
+            key={index}
+            to={link.pathname}
+            activeClassName='selected'
+            isActive={() => currentPath === link.pathname}
+          >
+            {link.title}
+          </Link>
+        ))}
+      </Links>
+      <RightSide>
+        <LanguageSelect>
+          <Language>Eng</Language>
+          <Arrow />
+        </LanguageSelect>
+        {name ? <Profile name={name} /> : <Button>Sign up / Log in</Button>}
+      </RightSide>
+    </Wrapper>
   );
 };
 

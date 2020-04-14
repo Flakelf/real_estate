@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react';
 
 import { Facebook, Twitter } from '../../ui/icons';
-import { Container } from '../../ui/components';
 
 import { Wrapper, Links, Link, Soc, CopyRight } from './styled';
 
@@ -20,24 +19,22 @@ const Footer = () => {
   );
 
   return (
-    <Container>
-      <Wrapper>
-        <Soc>
-          <Facebook />
-          <Twitter />
-        </Soc>
+    <Wrapper>
+      <Soc>
+        <Facebook />
+        <Twitter />
+      </Soc>
 
-        <Links>
-          {links.map((link, index) => (
-            <Link key={index} to={link.pathname}>
-              {link.title}
-            </Link>
-          ))}
-        </Links>
+      <Links>
+        {links.map((link, index) => (
+          <Link key={index} to={link.pathname}>
+            {link.title}
+          </Link>
+        ))}
+      </Links>
 
-        <CopyRight>Copyright © 2019. All Rights Reserved.</CopyRight>
-      </Wrapper>
-    </Container>
+      <CopyRight>Copyright © 2019. All Rights Reserved.</CopyRight>
+    </Wrapper>
   );
 };
 
