@@ -3,8 +3,6 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   position: relative;
 
-  border-radius: 15px 15px 0px 0px;
-
   width: 100%;
 
   ${p =>
@@ -12,10 +10,6 @@ export const Wrapper = styled.div`
       background: url(${p.imgSrc});
       background-size: 100% 100%;
   `}
-`;
-
-export const Image = styled.img`
-  border-radius: 15px;
 `;
 
 export const TitleWrapper = styled.div`
