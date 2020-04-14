@@ -29,15 +29,17 @@ export const BlogContent = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 15px;
-  grid-row-gap: 0px;
+  grid-column-gap: 14px;
+  grid-row-gap: 15px;
 
   div:nth-child(4) {
     grid-area: 1 / 3 / 3 / 4;
+    height: 445px;
   }
 
   div:nth-child(3) {
     grid-area: 2 / 1 / 3 / 3;
+    height: 215px;
   }
 
   margin: 51px 0 0 0;

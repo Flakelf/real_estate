@@ -2,16 +2,28 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   position: relative;
+
+  width: 100%;
+
+  min-height: 201px;
+  max-height: 445px;
+
+  ${p =>
+    `
+      background: url(${p.imgSrc});
+      background-size: cover;
+  `}
 `;
 
 export const Image = styled.img`
   border-radius: 15px;
-  width: 100%;
 `;
 
 export const TitleWrapper = styled.div`
   position: absolute;
   top: 0px;
+
+  /* width: 380px; */
 
   width: 100%;
   height: 96px;
