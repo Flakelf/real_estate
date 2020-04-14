@@ -3,15 +3,14 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   position: relative;
 
-  width: 100%;
+  border-radius: 15px 15px 0px 0px;
 
-  min-height: 201px;
-  max-height: 445px;
+  width: 100%;
 
   ${p =>
     `
       background: url(${p.imgSrc});
-      background-size: cover;
+      background-size: 100% 100%;
   `}
 `;
 
@@ -22,8 +21,6 @@ export const Image = styled.img`
 export const TitleWrapper = styled.div`
   position: absolute;
   top: 0px;
-
-  /* width: 380px; */
 
   width: 100%;
   height: 96px;
