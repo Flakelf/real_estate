@@ -26,7 +26,22 @@ export const BlogHeader = styled.p`
 `;
 
 export const BlogContent = styled.div`
-  display: grid;
+  .my-masonry-grid {
+    display: flex;
+    margin-left: -30px;
+    width: auto;
+
+    .my-masonry-grid_column {
+      margin-bottom: 30px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  /* display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 14px;
@@ -40,7 +55,7 @@ export const BlogContent = styled.div`
   div:nth-child(3) {
     grid-area: 2 / 1 / 3 / 3;
     height: 215px;
-  }
+  } */
 
   margin: 51px 0 0 0;
 `;
