@@ -34,48 +34,44 @@ const Blog = () => {
   return (
     <Wrapper>
       <BlogWrapper>
-        <Container>
-          <BlogHeader>Blog</BlogHeader>
-          <BlogContent>
-            {blogPosts.map(blogPost => (
-              <BlogPostPreview
-                key={blogPost.id}
-                imgSrc={Object.values(blogPics)[blogPost.id - 1]}
-                {...blogPost}
-              />
-            ))}
-          </BlogContent>
-        </Container>
+        <BlogHeader>Blog</BlogHeader>
+        <BlogContent>
+          {blogPosts.map(blogPost => (
+            <BlogPostPreview
+              key={blogPost.id}
+              imgSrc={Object.values(blogPics)[blogPost.id - 1]}
+              {...blogPost}
+            />
+          ))}
+        </BlogContent>
       </BlogWrapper>
 
-      <Container>
-        <NewsWrapper>
-          <NewsHeaderWrapper>
-            <NewsHeader>News</NewsHeader>
-            <FilterWrapper>
-              <Search />
-              <Filter placeholder='City' />
-              <Filter placeholder='Country' />
-            </FilterWrapper>
-          </NewsHeaderWrapper>
+      <NewsWrapper>
+        <NewsHeaderWrapper>
+          <NewsHeader>News</NewsHeader>
+          <FilterWrapper>
+            <Search />
+            <Filter placeholder='City' />
+            <Filter placeholder='Country' />
+          </FilterWrapper>
+        </NewsHeaderWrapper>
 
-          <Tabs />
+        <Tabs />
 
-          <NewsContent>
-            {splittedNews.map((newsLine, index) => (
-              <NewsLine key={index}>
-                {newsLine.map(newsPost => (
-                  <NewsPostPreview
-                    key={newsPost.id}
-                    imgSrc={Object.values(newsPics)[newsPost.id - 1]}
-                    {...newsPost}
-                  />
-                ))}
-              </NewsLine>
-            ))}
-          </NewsContent>
-        </NewsWrapper>
-      </Container>
+        <NewsContent>
+          {splittedNews.map((newsLine, index) => (
+            <NewsLine key={index}>
+              {newsLine.map(newsPost => (
+                <NewsPostPreview
+                  key={newsPost.id}
+                  imgSrc={Object.values(newsPics)[newsPost.id - 1]}
+                  {...newsPost}
+                />
+              ))}
+            </NewsLine>
+          ))}
+        </NewsContent>
+      </NewsWrapper>
     </Wrapper>
   );
 };
