@@ -5,11 +5,12 @@ import * as R from 'ramda';
 
 import { getNews, getBlogPosts } from '../../modules/blog/selectors';
 
-import { Tabs, NewsPostPreview, BlogPostPreview } from './components';
+import { Header, Footer } from '../../components';
 
 import { Filter, Container } from '../../ui/components';
 import { Search } from '../../ui/icons';
 
+import { Tabs, NewsPostPreview, BlogPostPreview } from './components';
 import { newsPics, blogPics } from './assets';
 
 import {
@@ -32,51 +33,60 @@ const Blog = () => {
   const splittedNews = useMemo(() => R.splitEvery(4, news), [news]);
 
   return (
-    <Wrapper>
-      <BlogWrapper>
-        <Container>
-          <BlogHeader>Blog</BlogHeader>
-          <BlogContent>
-            {blogPosts.map(blogPost => (
-              <BlogPostPreview
-                key={blogPost.id}
-                imgSrc={Object.values(blogPics)[blogPost.id - 1]}
-                {...blogPost}
-              />
-            ))}
-          </BlogContent>
-        </Container>
-      </BlogWrapper>
-
+    <React.Fragment>
       <Container>
-        <NewsWrapper>
-          <NewsHeaderWrapper>
-            <NewsHeader>News</NewsHeader>
-            <FilterWrapper>
-              <Search />
-              <Filter placeholder='City' />
-              <Filter placeholder='Country' />
-            </FilterWrapper>
-          </NewsHeaderWrapper>
-
-          <Tabs />
-
-          <NewsContent>
-            {splittedNews.map((newsLine, index) => (
-              <NewsLine key={index}>
-                {newsLine.map(newsPost => (
-                  <NewsPostPreview
-                    key={newsPost.id}
-                    imgSrc={Object.values(newsPics)[newsPost.id - 1]}
-                    {...newsPost}
-                  />
-                ))}
-              </NewsLine>
-            ))}
-          </NewsContent>
-        </NewsWrapper>
+        <Header />
       </Container>
-    </Wrapper>
+
+      <Wrapper>
+        <BlogWrapper>
+          <Container>
+            <BlogHeader>Blog</BlogHeader>
+            <BlogContent>
+              {blogPosts.map(blogPost => (
+                <BlogPostPreview
+                  key={blogPost.id}
+                  imgSrc={Object.values(blogPics)[blogPost.id - 1]}
+                  {...blogPost}
+                />
+              ))}
+            </BlogContent>
+          </Container>
+        </BlogWrapper>
+
+        <Container>
+          <NewsWrapper>
+            <NewsHeaderWrapper>
+              <NewsHeader>News</NewsHeader>
+              <FilterWrapper>
+                <Search />
+                <Filter placeholder='City' />
+                <Filter placeholder='Country' />
+              </FilterWrapper>
+            </NewsHeaderWrapper>
+
+            <Tabs />
+
+            <NewsContent>
+              {splittedNews.map((newsLine, index) => (
+                <NewsLine key={index}>
+                  {newsLine.map(newsPost => (
+                    <NewsPostPreview
+                      key={newsPost.id}
+                      imgSrc={Object.values(newsPics)[newsPost.id - 1]}
+                      {...newsPost}
+                    />
+                  ))}
+                </NewsLine>
+              ))}
+            </NewsContent>
+          </NewsWrapper>
+        </Container>
+      </Wrapper>
+      <Container>
+        <Footer />
+      </Container>
+    </React.Fragment>
   );
 };
 
